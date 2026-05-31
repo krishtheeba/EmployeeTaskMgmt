@@ -5,7 +5,9 @@ from database import *
 from datetime import timezone, timedelta
 from streamlit_autorefresh import st_autorefresh
 import time as tm
-
+import requests
+import json
+from google import genai
 
 API_KEY = st.secrets["my_api_key"]
 
@@ -523,10 +525,8 @@ if "user" in st.session_state:
         if task_input:
             if st.sidebar.button("➕ Add Task & Estimate Duration"):
         
-                # 1. Call Anthropic API to estimate duration
-                import requests
-                import json
-                from google import genai
+              
+
 
                 client = genai.Client(api_key=API_KEY)
 
