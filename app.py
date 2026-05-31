@@ -630,6 +630,9 @@ if "user" in st.session_state:
                     beep(880, 0.0, 0.3);
                     beep(880, 0.4, 0.3);
                     beep(1100, 0.8, 0.5);
+                    beep(880, 0.0, 0.3);
+                    beep(880, 0.4, 0.3);
+                    beep(1100, 0.8, 0.5);
                 }
 
                 // Auto-trigger
