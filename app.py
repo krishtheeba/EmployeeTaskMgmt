@@ -8,7 +8,7 @@ import time as tm
 import requests
 import json
 from google import genai
-
+import streamlit.components.v1 as components
 API_KEY = st.secrets["my_api_key"]
 
 IST = timezone(timedelta(hours=5, minutes=30))
