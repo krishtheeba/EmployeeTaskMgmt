@@ -6,6 +6,7 @@ from datetime import timezone, timedelta
 from streamlit_autorefresh import st_autorefresh
 import time as tm
 import requests
+import json
 from google import genai
 
 API_KEY = st.secrets["my_api_key"]
