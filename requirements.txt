@@ -1,0 +1,9 @@
+streamlit
+pandas
+requests
+json
+google-genai
+streamlit-autorefresh
+time
+datetime
+database
