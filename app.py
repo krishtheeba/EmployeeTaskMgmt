@@ -628,12 +628,12 @@ if "user" in st.session_state:
 
                     // Play 3 beeps
                     beep(880, 0.0, 0.3);  
-                    beep(880, 0.0, 0.3);
-                    beep(880, 0.4, 0.3);
+                    beep(880, 0.4, 0.7);
+                    beep(1100, 0.8, 0.3);
   
-                    beep(880, 0.4, 0.3);
-                    beep(1100, 0.8, 0.5);
-                    beep(1100, 0.8, 0.5);
+                    beep(880, 1.1, 0.3);
+                    beep(1100, 1.4, 0.5);
+                    beep(1100, 2.0, 0.5);
                 }
 
                 // Auto-trigger
