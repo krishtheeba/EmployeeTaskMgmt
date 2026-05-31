@@ -520,10 +520,10 @@ if "user" in st.session_state:
             st.session_state.task_timers = {}  # {task_id: {"duration_min": X, "start_time": T, "alarmed": False}}
 
         task_input = st.sidebar.text_input("Enter task description")
-        st.sidebar.button("➕ Add Task & Estimate Duration")
+        button_pressed=st.sidebar.button("➕ Add Task & Estimate Duration")
         # ── AI DURATION ESTIMATOR ──────────────────────────
         if task_input:
-            if st.sidebar.button("➕ Add Task & Estimate Duration"):
+            if button_pressed:
         
               
 
