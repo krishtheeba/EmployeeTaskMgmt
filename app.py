@@ -663,6 +663,24 @@ if "user" in st.session_state:
             st.caption("No active timers. Add a task to start tracking.")
 
         tasks = get_tasks(user_id)
+        task_df = pd.DataFrame(tasks, columns=["ID","Task Description","Status","Created","Completed"])
+        original_df = task_df.copy()
+        edited_df = st.data_editor(
+            task_df,
+            hide_index=True,
+            use_container_width=True,
+            disabled=["ID","Status","Created","Completed"],
+            key="task_editor"
+        )
+        for _, r in edited_df.iterrows():
+            old = original_df.loc[original_df["ID"]==r["ID"],"Task Description"].iloc[0]
+            if old != r["Task Description"]:
+                try:
+                    update_task_description(int(r["ID"]), r["Task Description"])
+                except Exception:
+                    pass
+
+        tasks = get_tasks(user_id)
         st.subheader("Today's Tasks")
         # Compact spreadsheet CSS
         st.markdown("""
