@@ -282,3 +282,18 @@ def get_all_employee_status():
 
     conn.close()
     return data
+# =====================================================
+# UPDATE TASK DESCRIPTION
+# =====================================================
+def update_task_description(task_id, new_description):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+    UPDATE tasks
+    SET task_desc = ?
+    WHERE task_id = ?
+    """, (new_description, task_id))
+
+    conn.commit()
+    conn.close()
