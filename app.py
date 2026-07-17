@@ -665,14 +665,14 @@ if "user" in st.session_state:
         tasks = get_tasks(user_id)
         task_df = pd.DataFrame(tasks, columns=["ID","Task Description","Status","Created","Completed"])
         original_df = task_df.copy()
-        edited_df = st.data_editor(
+        edited_df1 = st.data_editor(
             task_df,
             hide_index=True,
             use_container_width=True,
             disabled=["ID","Status","Created","Completed"],
             key="task_editor"
         )
-        for _, r in edited_df.iterrows():
+        for _, r in edited_df1.iterrows():
             old = original_df.loc[original_df["ID"]==r["ID"],"Task Description"].iloc[0]
             if old != r["Task Description"]:
                 try:
@@ -727,11 +727,7 @@ if "user" in st.session_state:
 
         # ── HEADER ROW ──────────────────────────────────────────────
         COLS = [0.6, 3.5, 1.5, 1.8, 1.8, 1.0]
-	edited_df = st.data_editor(
-    df,
-    use_container_width=True,
-    num_rows="dynamic"
-)
+		edited_df2 = st.data_editor(  edited_df1, use_container_width=True, num_rows="dynamic")
 
         header = st.columns(COLS)
         header_labels = ["ID", "Task Description", "Status", "Created", "Completed", "Action"]
