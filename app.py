@@ -662,7 +662,7 @@ if "user" in st.session_state:
         else:
             st.caption("No active timers. Add a task to start tracking.")
 
-        tasks = get_tasks(user_id)
+                tasks = get_tasks(user_id)
         task_df = pd.DataFrame(tasks, columns=["ID","Task Description","Status","Created","Completed"])
         original_df = task_df.copy()
         edited_df = st.data_editor(
@@ -727,11 +727,11 @@ if "user" in st.session_state:
 
         # ── HEADER ROW ──────────────────────────────────────────────
         COLS = [0.6, 3.5, 1.5, 1.8, 1.8, 1.0]
-	edited_df = st.data_editor(
-    df,
-    use_container_width=True,
-    num_rows="dynamic"
-)
+		edited_df = st.data_editor(
+    	df,
+    	use_container_width=True,
+    	num_rows="dynamic"
+		)
 
         header = st.columns(COLS)
         header_labels = ["ID", "Task Description", "Status", "Created", "Completed", "Action"]
